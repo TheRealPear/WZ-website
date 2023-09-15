@@ -1,95 +1,115 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/components/footer.css';
+import config from '../config.json';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 
 class Footer extends Component {
 	render() {
 		return (
-			<div
-				// Add .play-footer if on Play page to remove the margin top from the footer
-				className={`footer${
-					window.location.pathname.toLowerCase() === '/play'
-						? ' play-footer'
-						: ''
-				}`}
-			>
-				<div className='container'>
-					<div className='row'>
-						<div className='col-4'>
-							<h4 className='footer-header white left'>Site Map</h4>
-							<ul className='left' style={{ listStyleType: 'none' }}>
-								<li className='left'>
-									<Link className='footer-link' to='/'>
-										Home
-									</Link>
-								</li>
-								<li className='left'>
-									<Link className='footer-link' to='/play'>
-										Play
-									</Link>
-								</li>
-								<li className='left'>
-									<Link className='footer-link' to='/leaderboard'>
-										Leaderboard
-									</Link>
-								</li>
-								<li className='left'>
-									<Link className='footer-link' to='/staff'>
-										Staff
-									</Link>
-								</li>
-							</ul>
-						</div>
-						<div className='col-4 center footer-logo-wrapper'>
-							<img
-								src='/img/warzone.svg'
-								alt='Warzone logo'
-								className='footer-logo-image'
-							/>
-							<h5>
-								&copy; 2022{' '}
-								<Link to='/' className='footer-link'>
-									Warzone
+			<Container maxWidth={false} component="footer" sx={{ mt: 12, py: [3, 6], backgroundColor: "#1a1b1d", ul: { margin: 0, padding: 0, listStyle: 'none' } }}>
+				<Grid container spacing={4} justifyContent="space-evenly">
+					<Grid item order={{ xs: 1, sm: 1 }}>
+						<Typography variant="h6" color="text.primary" fontWeight="bold" textTransform="uppercase" gutterBottom>
+            				Site Map
+            			</Typography>
+						<ul>
+							<li>
+								<Link variant="subtitle1" color="text.secondary" to='/'>
+									Home
 								</Link>
-							</h5>
-						</div>
-						<div className='col-4'>
-							<h4 className='footer-header white right'>Useful Links</h4>
-							<ul className='right' style={{ listStyleType: 'none' }}>
-								<li className='right'>
-									<Link className='footer-link' to='/rules'>
-										Server Rules
-									</Link>
-								</li>
-								<li className='right'>
-									<Link className='footer-link' to='/privacy'>
-										Privacy Policy
-									</Link>
-								</li>
-								<li className='right'>
-									<Link className='footer-link' to='/screenshare'>
-										Screenshare Policy
-									</Link>
-								</li>
-							</ul>
-							<div className='right'>
-								Servers hosted by{' '}
-								<a href='https://minehut.com' className='footer-link white'>
-									Minehut
-								</a>
-								<br />
-								Originally made by{' '}
-								<a
-									href='https://twitter.com/lukechatton'
-									className='footer-link white'
-								>
-									Luke Chatton
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+							</li>
+							<li>
+								<Link variant="subtitle1" color="text.secondary" to='/leaderboard'>
+									Leaderboard
+								</Link>
+							</li>
+							<li>
+								<Link variant="subtitle1" color="text.secondary" to='/staff'>
+									Staff
+								</Link>
+							</li>
+							<li>
+								<Link variant="subtitle1" color="text.secondary" to='/rules'>
+									Server Rules
+								</Link>
+							</li>
+							<li>
+								<Link variant="subtitle1" color="text.secondary" to='/screenshare'>
+									Screenshare Policy
+								</Link>
+							</li>
+							<li>
+								<Link variant="subtitle1" color="text.secondary" to='/privacy'>
+									Privacy Policy
+								</Link>
+							</li>
+						</ul>
+					</Grid>
+					<Grid item order={{ xs: 3, sm: 2, userSelect: 'none' }} align="center">
+						<Container sx={{
+    						"@keyframes spin": {
+      							"100%": {
+        							transform: "rotate(360deg)",
+      							},
+    						},
+    						"& > img:hover": {
+      							animation: "spin 1.5s linear infinite",
+    						},
+  						}}>
+							<img src='/img/warzone.svg' width="40" alt='Warzone logo'/>
+						</Container>
+						<Typography variant="body2" color="text.primary" fontWeight="bold" sx={{ mt: 1.8 }}>
+							{'© '}{new Date().getUTCFullYear()}{' '}{config.NAME}
+						</Typography>
+						<Typography variant="body2" color="text.secondary" >
+							{'Not an official Minecraft service.'}
+							<br />
+							{'Not approved by or associated with Mojang or Microsoft'}
+						</Typography>
+						<Typography variant="body2" color="text.secondary" sx={{ mt: 1.5 }}>
+							{'Servers hosted by '}
+							<Link className='normalize-link' target='_blank' rel='noreferrer' to="https://minehut.com">
+								Minehut
+							</Link>
+							<br />
+							{'Originally made by '}
+							<Link className='normalize-link' target='_blank' rel='noreferrer' to="https://twitter.com/lukechatton">
+								Luke Chatton
+							</Link>
+							{' in 2014.'}
+    					</Typography>
+					</Grid>
+					<Grid item order={{ xs: 2, sm: 3 }} align="right">
+						<Typography variant="h6" color="text.primary" fontWeight="bold" textTransform="uppercase" gutterBottom>
+            				Useful Links
+            			</Typography>
+						<ul>
+							<li>
+								<Link variant="subtitle1" color="text.secondary" to='/play'>
+									Play
+								</Link>
+							</li>
+							<li>
+								<Link variant="subtitle1" color="text.secondary" to={config.DISCORD}>
+									Discord
+								</Link>
+							</li>
+							<li>
+								<Link variant="subtitle1" color="text.secondary" to={`https://twitter.com/${config.TWITTER}`}>
+									Twitter
+								</Link>
+							</li>
+							<li>
+								<Link variant="subtitle1" color="text.secondary" to='https://github.com/Warzone/'>
+									GitHub
+								</Link>
+							</li>
+						</ul>
+					</Grid>
+				</Grid>
+			</Container>
 		);
 	}
 }

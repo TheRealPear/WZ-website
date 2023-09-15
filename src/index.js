@@ -1,14 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './styles/simple-grid.css';
 import './global.css';
 import App from './App';
-import conf from './config.json';
+import config from './config.json';
 // import * as serviceWorker from './serviceWorker';
 
-export const config = conf;
 console.log('Using API ' + config.API_BASE);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App />);
 
 // serviceWorker.register();

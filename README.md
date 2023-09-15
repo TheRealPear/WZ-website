@@ -1,20 +1,28 @@
 ## Website
 
-Warzone's website is built with React. This ties in with Warzone's [TGM](https://github.com/Warzone/TGM) project to display information like player leaderboards, individual player stats, as well as detailed match info.
+Warzone's website is built with React. This ties in with Warzone's [Mars](https://github.com/Warzone/mars) project to display information such as player leaderboards, individual statistics, and detailed match information.
 
 ## Contributing
 
 ### Setup
 
-1. Setup the [API](https://github.com/Warzone/api) and a Spigot server connected to the API running the [TGM](https://github.com/Warzone/TGM) plugin configured and running correctly. The API is what the website relies on to get info like player stats and match info.
+1. Set up the [Mars API backend](https://github.com/Warzone/mars-api) for your Minecraft server in the next step.
 
-2. Make sure you have Node.js installed on the server. Run `yarn` (or `npm install`) to install all of the dependencies.
+2. Set up a [SportPaper](https://github.com/PGMDev/PGM/releases) server with [PGM plugin](https://github.com/PGMDev/PGM) and [Mars plugin](https://github.com/Warzone/Mars) connected to the API backend. Make sure both plugins are configured and it is properly working.
+	* The website relies on the API to fetch players' information and match statistics.
 
-3. Create a `config.json` file **in the src/ directory** that looks like this:
+3. Make sure you have [Node.js (LTS preferred)](https://nodejs.org/) installed on the system that will be running the website. Run `yarn` (or `npm install`) in a terminal to install all of the dependencies.
+
+4. Modify the `config.json` file **in the `src/` directory**, which looks like this:
 
 ```json
 {
-	"API_BASE": "YOUR_API_URL"
+	"API_BASE": "YOUR_MARS_API_URL",
+	"NAME": "Server Name",
+	"SERVER_ADDRESS": "play.example.net",
+	"STORE": "https://store.example.net",
+	"DISCORD": "https://example.net/discord",
+	"TWITTER": "ExampleHandle"
 }
 ```
 
@@ -22,5 +30,5 @@ Warzone's website is built with React. This ties in with Warzone's [TGM](https:/
 
 ### Developer Notes
 
-- We use [Prettier](https://prettier.io/). If you want to setup Prettier locally make sure to use our `.prettierrc`. This is optional as we have a GitHub bot that formats files if they're not already formatted correctly.
-- The site was not built with self-hosting in mind. This means important links like the Discord server and store are hardcoded at the moment.
+- We use [Prettier](https://prettier.io/). If you want to setup Prettier locally make sure to use our `.prettierrc`. This is optional, as we have a GitHub bot that formats files if they are not already formatted correctly.
+- The site was not built with self-hosting in mind. Some assets are partially hardcoded, including logos and important links such as the Discord invite and store, at the moment.

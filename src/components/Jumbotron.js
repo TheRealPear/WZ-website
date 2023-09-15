@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import '../styles/components/jumbotron.css';
-import Button from '@material-ui/core/Button';
-import Tooltip from '@material-ui/core/Tooltip';
 import { Link } from 'react-router-dom';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import '../styles/components/jumbotron.css';
 
 class Jumbotron extends Component {
 	state = {
@@ -62,46 +64,42 @@ class Jumbotron extends Component {
 
 	render() {
 		return (
-			<div className='jumbotron'>
-				<div>
-					<h1 className='jumbotron-header white center' id='jumbotron-header'>
-						{this.state.heading}
-					</h1>
-				</div>
-				<div className='center'>
-					<Tooltip
-						disableFocusListener
-						disableTouchListener
-						title='Minecraft 1.8+'
+			<Container maxWidth={false} align='center' sx={{ minHeight: '300px', mb: '20px', backgroundPosition: 'center', backgroundSize: 'cover' }} className='jumbotron'>
+				<Typography id='jumbotron-header' fontSize="4.68rem" fontWeight="500" sx={{ mb: 2.6, pt: '52px', userSelect: 'none' }}>
+					{this.state.heading}
+				</Typography>
+				<Tooltip
+					disableFocusListener
+					disableTouchListener
+					title='Minecraft 1.8+'
+					arrow
+				>
+					<Button
+						variant='contained'
+						color='primary'
+						component={Link}
+						to='/play'
 					>
-						<Button
-							variant='contained'
-							color='primary'
-							className='white'
-							component={Link}
-							to='/play'
-						>
-							Enter a match
-						</Button>
-					</Tooltip>
-					<div className='jumbotron-button-divider' />
-					<Tooltip
-						disableFocusListener
-						disableTouchListener
-						title='View leaderboard'
+						Join a match
+					</Button>
+				</Tooltip>
+				<div className='jumbotron-button-divider' />
+				<Tooltip
+					disableFocusListener
+					disableTouchListener
+					title='View leaderboard'
+					arrow
+				>
+					<Button
+						variant='contained'
+						color='secondary'
+						component={Link}
+						to='/leaderboard'
 					>
-						<Button
-							variant='contained'
-							color='secondary'
-							className='white'
-							component={Link}
-							to='/leaderboard'
-						>
-							View top players
-						</Button>
-					</Tooltip>
-				</div>
-			</div>
+						View top players
+					</Button>
+				</Tooltip>
+			</Container>
 		);
 	}
 }

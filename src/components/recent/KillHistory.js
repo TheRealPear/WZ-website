@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import TableRow from '@material-ui/core/TableRow';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import CircularProgress from '@mui/material/CircularProgress';
+import TableRow from '@mui/material/TableRow';
 import { Link } from 'react-router-dom';
 import '../../styles/components/recent/kill-history.css';
 
@@ -15,7 +15,7 @@ class KillHistory extends Component {
 				{/* <hr /> */}
 				{!this.props.kills && (
 					<div className='center'>
-						<span className='red'>No kills to show :(</span>
+						<span className='red'>No kills to show :&#40;</span>
 					</div>
 				)}
 				{this.props.kills && this.props.kills.length === 0 && (
@@ -39,7 +39,7 @@ class KillHistory extends Component {
 												src={
 													!kill.killerLoaded
 														? `https://crafatar.com/avatars/606e2ff0ed7748429d6ce1d3321c7838?size=32`
-														: `https://crafatar.com/avatars/${kill.killerLoaded.uuid}?size=32`
+														: `https://crafatar.com/avatars/${kill.killerLoaded.uuid}?overlay&size=32`
 												}
 												alt='Player head'
 											/>
@@ -68,7 +68,7 @@ class KillHistory extends Component {
 										<TableCell className='kill-history-table-cell center'>
 											<img
 												className='kill-history-player-head'
-												src={`https://crafatar.com/avatars/${kill.playerLoaded.uuid}?size=32`}
+												src={`https://crafatar.com/avatars/${kill.playerLoaded.uuid}?overlay&size=32`}
 												alt='Player head'
 											/>
 										</TableCell>

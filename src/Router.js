@@ -1,7 +1,7 @@
-import { BrowserRouter, Switch } from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
-import React, { Component } from 'react';
 import Leaderboard from './pages/Leaderboard';
 import Footer from './components/Footer';
 import ServerRules from './pages/ServerRules';
@@ -20,27 +20,20 @@ class Router extends Component {
 			<BrowserRouter>
 				<div className='flex-wrapper'>
 					<Navbar />
-
-					<Switch>
-						<ScrollToTopRoute exact path='/' component={Home} />
-						<ScrollToTopRoute
-							exact
-							path='/leaderboard'
-							component={Leaderboard}
-						/>
-						<ScrollToTopRoute exact path='/rules' component={ServerRules} />
-						<ScrollToTopRoute exact path='/privacy' component={PrivacyPolicy} />
-						<ScrollToTopRoute
-							exact
-							path='/screenshare'
-							component={Screenshare}
-						/>
-						<ScrollToTopRoute exact path='/play' component={Play} />
-						<ScrollToTopRoute exact path='/staff' component={Staff} />
-						<ScrollToTopRoute exact path='/m/:mid' component={MatchInfo} />
-						<ScrollToTopRoute exact path='/p/:pid' component={PlayerInfo} />
-						<ScrollToTopRoute component={NotFound} />
-					</Switch>
+					
+					<ScrollToTopRoute />
+					<Routes>
+						<Route path='/' element={<Home />} />
+						<Route path='/leaderboard' element={< Leaderboard />} />
+						<Route path='/rules' element={< ServerRules />} />
+						<Route path='/privacy' element={< PrivacyPolicy />} />
+						<Route path='/screenshare' element={< Screenshare />} />
+						<Route path='/play' element={< Play />} />
+						<Route path='/staff' element={< Staff />} />
+						<Route path='/m/:mid' element={< MatchInfo />} />
+						<Route path='/p/:pid' element={< PlayerInfo />} />
+						<Route path='*' element={< NotFound />} />
+					</Routes>
 
 					<Footer />
 				</div>

@@ -1,7 +1,7 @@
 .feature-grid-image {
-	width: 100%;
+	width: 282px;
 	height: 140px;
-	border-radius: 2px;
+	border-radius: 3px;
 	transition: transform 0.2s;
 }
 
