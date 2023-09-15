@@ -18,7 +18,7 @@ class NotFound extends Component {
 						Error 404
 					</Typography>
 					<Typography sx={{ mt: 3, mb: 3 }}>
-						The page you are looking for may have been removed, temporarily 
+						The page you are looking for may have been removed, is temporarily 
 						unavailable, or does not exist.<br /> 
 						Please check that you have typed the URL correctly or try again later.
 					</Typography>

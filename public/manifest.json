@@ -1,15 +1,39 @@
 {
   "short_name": "WZ",
   "name": "Warzone",
+  "description": "Minecraft competitive platform built by the community, for the community. Play to win!",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "img/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "img/warzone.svg",
+      "sizes": "any"
     }
   ],
+  "shortcuts" : [
+    {
+      "name": "Play",
+      "url": "/play"
+    },
+    {
+      "name": "Leaderboard",
+      "url": "/leaderboard",
+      "description": "The highest ranked players on Warzone"
+    },
+    {
+      "name": "Staff",
+      "url": "/staff"
+    },
+    {
+      "name": "Server Rules",
+      "url": "/rules"
+    }
+  ],  
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
+  "display": "minimal-ui",
+  "theme_color": "#9148D3",
   "background_color": "#303030"
 }

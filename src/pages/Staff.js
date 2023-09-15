@@ -113,8 +113,8 @@ export default function Staff() {
 					))}
 
 					<p>
-						To get in contact with staff, please join{' '}
-						<a className='bold white' href='https://warz.one/discord'>
+						To get in contact with staff or stay updated on openings, please join{' '}
+						<a className='bold normalize-link' href='https://warz.one/discord'>
 							our Discord server
 						</a>
 						.

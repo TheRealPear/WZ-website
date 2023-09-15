@@ -20,7 +20,6 @@ class Router extends Component {
 			<BrowserRouter>
 				<div className='flex-wrapper'>
 					<Navbar />
-					
 					<ScrollToTopRoute />
 					<Routes>
 						<Route path='/' element={<Home />} />
@@ -34,7 +33,6 @@ class Router extends Component {
 						<Route path='/p/:pid' element={< PlayerInfo />} />
 						<Route path='*' element={< NotFound />} />
 					</Routes>
-
 					<Footer />
 				</div>
 			</BrowserRouter>

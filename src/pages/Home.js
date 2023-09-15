@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Box from '@mui/material/Box';
 import Jumbotron from '../components/Jumbotron';
 import RecentGrid from '../components/recent/RecentGrid';
 import FeatureGrid from '../components/FeatureGrid';
@@ -6,13 +7,13 @@ import FeatureGrid from '../components/FeatureGrid';
 class Home extends Component {
 	render() {
 		return (
-			<div>
+			<Box>
 				<Jumbotron />
-				<div className='container'>
+				<Box className='container'>
 					<RecentGrid sx={{ marginBottom: '4%' }} />
 					<FeatureGrid />
-				</div>
-			</div>
+				</Box>
+			</Box>
 		);
 	}
 }

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import config from '../config.json';
-import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 class Footer extends Component {
 	render() {
 		return (
-			<Container maxWidth={false} component="footer" sx={{ mt: 12, py: [3, 6], backgroundColor: "#1a1b1d", ul: { margin: 0, padding: 0, listStyle: 'none' } }}>
+			<Box component="footer" sx={{ mt: 12, py: [3, 6], backgroundColor: "#1a1b1d", ul: { margin: 0, padding: 0, listStyle: 'none' } }}>
 				<Grid container spacing={4} justifyContent="space-evenly">
 					<Grid item order={{ xs: 1, sm: 1 }}>
 						<Typography variant="h6" color="text.primary" fontWeight="bold" textTransform="uppercase" gutterBottom>
@@ -48,7 +48,7 @@ class Footer extends Component {
 						</ul>
 					</Grid>
 					<Grid item order={{ xs: 3, sm: 2, userSelect: 'none' }} align="center">
-						<Container sx={{
+						<Box sx={{
     						"@keyframes spin": {
       							"100%": {
         							transform: "rotate(360deg)",
@@ -59,7 +59,7 @@ class Footer extends Component {
     						},
   						}}>
 							<img src='/img/warzone.svg' width="40" alt='Warzone logo'/>
-						</Container>
+						</Box>
 						<Typography variant="body2" color="text.primary" fontWeight="bold" sx={{ mt: 1.8 }}>
 							{'© '}{new Date().getUTCFullYear()}{' '}{config.NAME}
 						</Typography>
@@ -69,13 +69,8 @@ class Footer extends Component {
 							{'Not approved by or associated with Mojang or Microsoft'}
 						</Typography>
 						<Typography variant="body2" color="text.secondary" sx={{ mt: 1.5 }}>
-							{'Servers hosted by '}
-							<Link className='normalize-link' target='_blank' rel='noreferrer' to="https://minehut.com">
-								Minehut
-							</Link>
-							<br />
 							{'Originally made by '}
-							<Link className='normalize-link' target='_blank' rel='noreferrer' to="https://twitter.com/lukechatton">
+							<Link className='normalize-link' target='_blank' rel='noreferrer' to="https://github.com/lukechatton">
 								Luke Chatton
 							</Link>
 							{' in 2014.'}
@@ -109,7 +104,7 @@ class Footer extends Component {
 						</ul>
 					</Grid>
 				</Grid>
-			</Container>
+			</Box>
 		);
 	}
 }

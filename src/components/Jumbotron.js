@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
@@ -64,7 +64,7 @@ class Jumbotron extends Component {
 
 	render() {
 		return (
-			<Container maxWidth={false} align='center' sx={{ minHeight: '300px', mb: '20px', backgroundPosition: 'center', backgroundSize: 'cover' }} className='jumbotron'>
+			<Box align='center' sx={{ minHeight: '300px', mb: '20px', backgroundPosition: 'center', backgroundSize: 'cover' }} className='jumbotron'>
 				<Typography id='jumbotron-header' fontSize="4.68rem" fontWeight="500" sx={{ mb: 2.6, pt: '52px', userSelect: 'none' }}>
 					{this.state.heading}
 				</Typography>
@@ -87,7 +87,7 @@ class Jumbotron extends Component {
 				<Tooltip
 					disableFocusListener
 					disableTouchListener
-					title='View leaderboard'
+					title='View the leaderboard'
 					arrow
 				>
 					<Button
@@ -99,7 +99,7 @@ class Jumbotron extends Component {
 						View top players
 					</Button>
 				</Tooltip>
-			</Container>
+			</Box>
 		);
 	}
 }
