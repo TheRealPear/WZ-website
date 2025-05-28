@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { config } from '../';
+import CircularProgress from '@mui/material/CircularProgress';
+import config from '../config.json';
 import '../styles/pages/player-info.css';
 import PlayerStatsRow from '../components/player/PlayerStatsRow';
 import KillHistory from '../components/recent/KillHistory';

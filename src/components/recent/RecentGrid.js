@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MatchHistory from './MatchHistory';
-import { config } from '../..';
+import config from '../../config.json';
 import KillHistory from './KillHistory';
 
 class RecentGrid extends Component {

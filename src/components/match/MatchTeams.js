@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../styles/components/match/match-teams.css';
-import { Table, TableBody, TableRow, TableCell } from '@material-ui/core';
+import { Table, TableBody, TableRow, TableCell } from '@mui/material';
 import { minecraftColorToHex } from '../../utils';
 
 class MatchTeams extends Component {

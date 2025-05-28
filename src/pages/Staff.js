@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Tooltip from '@material-ui/core/Tooltip';
+import CircularProgress from '@mui/material/CircularProgress';
+import Tooltip from '@mui/material/Tooltip';
 import { Link } from 'react-router-dom';
 import NotFound from './NotFound';
-import { config } from '../';
+import config from '../config.json';
 import '../styles/pages/staff.css';
 
 const bedrock = ["*", "."];

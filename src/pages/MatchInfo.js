@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Clock from '@material-ui/icons/Timer';
+import CircularProgress from '@mui/material/CircularProgress';
+import Clock from '@mui/icons-material/Timer';
 import '../styles/pages/match-info.css';
-import { config } from '../';
+import config from '../config.json';
 import {
 	formatTime,
 	gamemodes,

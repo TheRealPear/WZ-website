@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import TableRow from '@material-ui/core/TableRow';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import CircularProgress from '@mui/material/CircularProgress';
+import TableRow from '@mui/material/TableRow';
 import { Link } from 'react-router-dom';
 import '../styles/pages/leaderboard.css';
-import { config } from '../';
+import config from '../config.json';
 
 class Leaderboard extends Component {
 	state = {
